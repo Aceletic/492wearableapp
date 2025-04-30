@@ -58,7 +58,7 @@ export default function DebugScreen() {
   }
 
   const TrueUVdiv10 = (uvIndex: string): number => {
-    return (Number(uvIndex))/10;
+    return (Number(uvIndex)); 
   }
 
   return (
