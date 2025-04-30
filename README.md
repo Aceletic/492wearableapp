@@ -12,28 +12,28 @@ Links I used to figure out this method:
 4.	Make sure you have a cable to connect to the Mac (should be ether USB to Lightning if older model or USB C-USB-C if newer model)
 5.	Download the app files and move them to a location you know how to navigate to file-wise
 6.	Install expo, packages, libraries, etc.  using the letter steps below (this only needs to be done the first time per folder directory)
-  a.	Open a command line terminal (should just be called terminal on mac)
-  b.	Navigate to the folder containing the app files (to the point that you would see each folder for ios, android, app, assets, etc. in a file explorer)
-    i.	Npm install expo@^49
-    ii.	Npx expo install
-    iii.	Npx expo install @config_plugins/react-native-ble-plx expo-file-system react-native-ble-plx @react-native-anywhere/ployfill-base64 expo-device
-    iv.	Npx expo prebuild
-7.	Go back to Xcode and select to open an existing project, and navigate the file explorer and select the ios folder in the project folder (if you select anything else, it will say it was unable to open).
-8.	 Open Xcode settings (click on xcode in top left of screen, not part of application) go to “locations” and make sure that you have command line tools installed, go ahead and reselect even if they show being selected
-9.	Connect the phone to the mac
-10.	Go to project settings in xcode   and “signing & capabilities” and select the apple id that is (signed into xcode and maybe the phone?)
-11.	Go to signing & capabilities and remove “push notifications”
-12.	Click on the top bar in xcode on the project name, select “edit scheme”, select “Build Configuration” – Release
-13.	Build the project bundle in the command line with [ npx expo export:embed --entry-file=’node_modules/expo/AppEntry.js’ --bundle-output=’ ./ios/main.jsbundle’ –dev=false –platform=’ios’  ]
-  a.	You may need to change where the app entry is in package.json
-    i.	“main”: “expo-router/entry”
-    ii.	Is node_modules/expo-router/entry.js
-    iii.	npx expo export:embed --entry-file=’node_modules/expo-router/entry.js’ --bundle-output=’./ios/main.jsbundle’ –dev=false –platform=’ios’
-14.	 in Xcode in Build Phases -> Bundle React Native code and images -> Check off “For install builds only” if it’s checked
-15.	Go to Xcode, select the iPhone from devices on the top bar and runt the project by clicking the triangle  in the top left corner.
-16.	It should build and then install on the phone, then there should be a pop-up on the phone that its from an untrusted developer.
-17.	Open the phones settings > general > vpn & device management > click on the apple id and click trust
-18.	You should now be able to open the app on your phone and it should operate correctly. 
+a.	Open a command line terminal (should just be called terminal on mac)
+b.	Navigate to the folder containing the app files (to the point that you would see each folder for ios, android, app, assets, etc. in a file explorer)
+i.	Npm install expo@^49
+ii.	Npx expo install
+iii.	Npx expo install @config_plugins/react-native-ble-plx expo-file-system react-native-ble-plx @react-native-anywhere/ployfill-base64 expo-device
+iv.	Npx expo prebuild
+8.	Go back to Xcode and select to open an existing project, and navigate the file explorer and select the ios folder in the project folder (if you select anything else, it will say it was unable to open).
+9.	 Open Xcode settings (click on xcode in top left of screen, not part of application) go to “locations” and make sure that you have command line tools installed, go ahead and reselect even if they show being selected
+10.	Connect the phone to the mac
+11.	Go to project settings in xcode   and “signing & capabilities” and select the apple id that is (signed into xcode and maybe the phone?)
+12.	Go to signing & capabilities and remove “push notifications”
+13.	Click on the top bar in xcode on the project name, select “edit scheme”, select “Build Configuration” – Release
+14.	Build the project bundle in the command line with [ npx expo export:embed --entry-file=’node_modules/expo/AppEntry.js’ --bundle-output=’ ./ios/main.jsbundle’ –dev=false –platform=’ios’  ]
+a.	You may need to change where the app entry is in package.json
+i.	“main”: “expo-router/entry”
+ii.	Is node_modules/expo-router/entry.js
+iii.	npx expo export:embed --entry-file=’node_modules/expo-router/entry.js’ --bundle-output=’./ios/main.jsbundle’ –dev=false –platform=’ios’
+15.	 in Xcode in Build Phases -> Bundle React Native code and images -> Check off “For install builds only” if it’s checked
+16.	Go to Xcode, select the iPhone from devices on the top bar and runt the project by clicking the triangle  in the top left corner.
+17.	It should build and then install on the phone, then there should be a pop-up on the phone that its from an untrusted developer.
+18.	Open the phones settings > general > vpn & device management > click on the apple id and click trust
+19.	You should now be able to open the app on your phone and it should operate correctly. 
 
 Android (as of 4/25/25)
 
